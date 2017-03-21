@@ -1,5 +1,5 @@
 # Roboto Web Font Test
-Testing site for Roboto web font using [Material Design Lite](https://getmdl.io) components.
+Testing site for the Roboto webfonts using [Material Design Lite](https://getmdl.io) components. Toggle between the last version hosted on fonts.google.com and the fonts stored in ./www/roboto_webfonts
 
 https://robototester.appspot.com
 
