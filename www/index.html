@@ -1,0 +1,516 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Roboto Test</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <style>
+
+
+    /* New Roboto fonts, pr https://github.com/google/fonts/pull/710 */
+    @font-face{
+      font-family: 'RobotoNew';
+      font-weight: 300;
+      src: url(./roboto_webfonts/Roboto-Light.ttf);
+    }
+    @font-face{
+      font-family: 'RobotoNew';
+      font-weight: 400;
+      src: url(./roboto_webfonts/Roboto-Regular.ttf);
+    }
+    @font-face{
+      font-family: 'RobotoNew';
+      font-weight: 500;
+      src: url(./roboto_webfonts/Roboto-Medium.ttf);
+    }
+    @font-face{
+      font-family: 'RobotoNew';
+      font-weight: 600;
+      src: url(./roboto_webfonts/Roboto-Bold.ttf);
+    }
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    .demo-content{
+      padding: 20px;
+    }
+
+    /*<!-- Event card -->*/
+    <style>
+    .demo-card-event.mdl-card {
+      width: 256px;
+      height: 256px;
+      background: #3E4EB8;
+    }
+    .demo-card-event > .mdl-card__actions {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .demo-card-event > .mdl-card__title {
+      align-items: flex-start;
+    }
+    .demo-card-event > .mdl-card__title > h4 {
+      margin-top: 0;
+    }
+    .demo-card-event > .mdl-card__actions {
+      display: flex;
+      box-sizing:border-box;
+      align-items: center;
+    }
+    .demo-card-event > .mdl-card__actions > .material-icons {
+      padding-right: 10px;
+    }
+    .demo-card-event > .mdl-card__title,
+    .demo-card-event > .mdl-card__actions,
+    .demo-card-event > .mdl-card__actions > .mdl-button {
+      color: #fff;
+    }
+
+    .descriptor1, .descriptor2{
+      padding-top: 10px;
+      border-top: 1px solid black;
+    }
+    .descriptor1{
+      margin-top: 50px;
+    }
+    #font-swap{
+      padding: 10px;
+      background-color: white;
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+
+    }
+    .new-fonts, .current-fonts{
+      cursor: pointer;
+      color: red;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--white">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--white mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Roboto: MDL Test</span>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white  content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+
+          <div id="font-swap">
+            <div id="current-fonts">
+              Roboto v2.000
+            </div>
+            <span class="new-fonts">new</span> | 
+            <span class="current-fonts">old</span>
+          </div>
+
+            <h5 class="descriptor1">About</h5>
+            <p>Visual site to check <a href="https://github.com/google/fonts/pull/710">Roboto v2.136</a>, against version hosted at <a href="http:/fonts.google.com">fonts.google.com</a></p>
+
+            <h5 class="descriptor1">Typography</h5>
+
+            <h6 class="descriptor2">Display 4</h6>
+            <p data-content="demo" class="mdl-typography--display-4">
+            She verse ashore
+            </p>
+
+            <h6 class="descriptor2">Display 3</h6>
+            <p data-content="demo" class="mdl-typography--display-3">
+            Winston's pickle farm
+            </p>
+
+            <h6 class="descriptor2">Display 2</h6>
+            <p data-content="demo" class="mdl-typography--display-2">
+            St Amber Germaine
+            </p>
+
+            <h6 class="descriptor2">Display 1</h6>
+            <p data-content="demo" class="mdl-typography--display-1">
+            Back to the future
+            </p>
+
+            <h6 class="descriptor2">Heading 1</h6>
+            <h1>Stop press</h1>
+            
+            <h6 class="descriptor2">Heading 2</h6>
+            <h2>London at 6pm</h2>
+
+            <h6 class="descriptor2">Heading 3</h6>
+            <h3>Tree surgeon</h3>
+
+            <h6 class="descriptor2">Heading 4</h6>
+            <h4>Ambroisa</h4>
+
+            <h6 class="descriptor2">Heading 5</h6>
+            <h5>Time will tell whether...</h5>
+
+            <h6 class="descriptor2">Heading 6</h6>
+            <h6>Chris Clark</h6>
+
+
+            <h6 class="descriptor2">Headline</h6>
+            <p data-content="demo" class="mdl-typography--headline">
+              Fullness of the wind
+            </p>
+
+            <h6 class="descriptor2">Title</h6>
+            <p data-content="demo" class="mdl-typography--title">
+              LDR to run past midnight
+            </p>
+
+            <h6 class="descriptor2">Subhead</h6>
+            <p data-content="demo" class="mdl-typography--subhead">
+              Burgundy
+            </p>
+
+
+            <h6 class="descriptor2">Body 2</h6>
+            <p data-content="demo" class="mdl-typography--body-2-force-preferred-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin massa ac vestibulum rutrum. Pellentesque ut metus ac nulla ultrices lobortis vel pulvinar massa. Maecenas porta vulputate ultricies. Suspendisse potenti. Fusce vel ante ultricies, suscipit libero vel, pulvinar turpis. Vivamus rutrum nec urna sed placerat. Proin consectetur est sit amet urna vestibulum, eu convallis neque luctus. Maecenas tincidunt consequat efficitur. Maecenas vitae porta leo. Nullam finibus dignissim ultricies. Nullam eget malesuada augue, vitae consequat elit.</p>
+
+            <h6 class="descriptor2">Body 1</h6>
+            <p data-content="demo" class="mdl-typography--body-1-force-preferred-font">Pellentesque condimentum dolor in felis semper, in euismod neque fringilla. Pellentesque tincidunt malesuada orci et posuere. Integer in leo non leo efficitur luctus. Sed non erat eu metus interdum finibus. Sed lacinia tortor a lacus efficitur auctor. Nunc quam metus, tristique quis pharetra semper, pretium eu odio. Morbi pellentesque pharetra sapien, sit amet lobortis massa finibus ac.</p>
+
+            <h6 class="descriptor2">Caption</h6>
+            <p data-content="demo" class="mdl-typography--caption-force-preferred-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin massa ac vestibulum rutrum. Pellentesque ut metus ac nulla ultrices lobortis vel pulvinar massa. Maecenas porta vulputate ultricies. Suspendisse potenti. Fusce vel ante ultricies, suscipit libero vel, pulvinar turpis. Vivamus rutrum nec urna sed placerat. Proin consectetur est sit amet urna vestibulum, eu convallis neque luctus. Maecenas tincidunt consequat efficitur. Maecenas vitae porta leo. Nullam finibus dignissim ultricies. Nullam eget malesuada augue, vitae consequat elit.</p>
+
+
+            <h5 class="descriptor1">Badges</h5>
+            <!-- Number badge on icon -->
+            <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>
+            <!-- Icon badge on icon -->
+            <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="♥">account_box</div>
+
+            <!-- Number badge -->
+            <span class="mdl-badge" data-badge="4">Inbox</span>
+            <!-- Icon badge -->
+            <span class="mdl-badge" data-badge="♥">Mood</span>
+
+            <h5 class="descriptor1">Cards</h5>
+            <!-- Wide card with share menu button -->
+            <style>
+            .demo-card-wide.mdl-card {
+              width: 512px;
+            }
+            .demo-card-wide > .mdl-card__title {
+              color: #fff;
+              height: 176px;
+              background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+            }
+            .demo-card-wide > .mdl-card__menu {
+              color: #fff;
+            }
+            </style>
+
+            <div data-content="demo" class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div data-content="demo" class="mdl-card__title">
+                <h2 data-content="demo" class="mdl-card__title-text">Welcome</h2>
+              </div>
+              <div data-content="demo" class="mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sagittis pellentesque lacus eleifend lacinia...
+              </div>
+              <div data-content="demo" class="mdl-card__actions mdl-card--border">
+                <a data-content="demo" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Get Started
+                </a>
+              </div>
+              <div data-content="demo" class="mdl-card__menu">
+                <button data-content="demo" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                  <i class="material-icons">share</i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Event card -->
+            <style>
+            .demo-card-event.mdl-card {
+              width: 256px;
+              height: 256px;
+              background: #3E4EB8;
+            }
+            .demo-card-event > .mdl-card__actions {
+              border-color: rgba(255, 255, 255, 0.2);
+            }
+            .demo-card-event > .mdl-card__title {
+              align-items: flex-start;
+            }
+            .demo-card-event > .mdl-card__title > h4 {
+              margin-top: 0;
+            }
+            .demo-card-event > .mdl-card__actions {
+              display: flex;
+              box-sizing:border-box;
+              align-items: center;
+            }
+            .demo-card-event > .mdl-card__actions > .material-icons {
+              padding-right: 10px;
+            }
+            .demo-card-event > .mdl-card__title,
+            .demo-card-event > .mdl-card__actions,
+            .demo-card-event > .mdl-card__actions > .mdl-button {
+              color: #fff;
+            }
+            </style>
+
+            <div data-content="demo" class="demo-card-event mdl-card mdl-shadow--2dp">
+              <div data-content="demo" class="mdl-card__title mdl-card--expand">
+                <h4>
+                  Featured event:<br>
+                  May 24, 2016<br>
+                  7-11pm
+                </h4>
+              </div>
+              <div data-content="demo" class="mdl-card__actions mdl-card--border">
+                <a data-content="demo" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Add to Calendar
+                </a>
+                <div data-content="demo" class="mdl-layout-spacer"></div>
+                <i class="material-icons">event</i>
+              </div>
+            </div>
+
+
+            <h5 class="descriptor1">Chips</h5>
+            <!-- Basic Chip -->
+            <span data-content="demo" class="mdl-chip">
+                <span data-content="demo" class="mdl-chip__text">Basic Chip</span>
+            </span><!-- Deletable Chip -->
+            <span data-content="demo" class="mdl-chip mdl-chip--deletable">
+                <span data-content="demo" class="mdl-chip__text">Deletable Chip</span>
+                <button type="button" data-content="demo" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+            </span><!-- Button Chip -->
+            <button type="button" data-content="demo" class="mdl-chip">
+                <span data-content="demo" class="mdl-chip__text">Button Chip</span>
+            </button>
+
+            <!-- Contact Chip -->
+            <span data-content="demo" class="mdl-chip mdl-chip--contact">
+                <span data-content="demo" class="mdl-chip__contact mdl-color--teal mdl-color-text--white">A</span>
+                <span data-content="demo" class="mdl-chip__text">Contact Chip</span>
+            </span>
+
+
+            <h5 class="descriptor1">Lists</h5>
+            <!-- List items with avatar and action -->
+            <style>
+            .demo-list-action {
+              width: 300px;
+            }
+            </style>
+
+            <div data-content="demo" class="demo-list-action mdl-list">
+              <div data-content="demo" class="mdl-list__item">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-avatar">person</i>
+                  <span>Bryan Cranston</span>
+                </span>
+                <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+              </div>
+              <div data-content="demo" class="mdl-list__item">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-avatar">person</i>
+                  <span>Aaron Paul</span>
+                </span>
+                <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+              </div>
+              <div data-content="demo" class="mdl-list__item">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-avatar">person</i>
+                  <span>Bob Odenkirk</span>
+                </span>
+                <span data-content="demo" class="mdl-list__item-secondary-content">
+                  <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+              </span>
+              </div>
+            </div>
+
+
+            <!-- Three Line List with secondary info and action -->
+            <style>
+            .demo-list-three {
+              width: 650px;
+            }
+            </style>
+
+            <ulclass="demo-list-three mdl-list">
+              <li class="mdl-list__item mdl-list__item--three-line">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-avatar">person</i>
+                  <span>Bryan Cranston</span>
+                  <span data-content="demo" class="mdl-list__item-text-body">
+                    Bryan Cranston played the role of Walter in Breaking Bad. He is also known
+                    for playing Hal in Malcom in the Middle.
+                  </span>
+                </span>
+                <span data-content="demo" class="mdl-list__item-secondary-content">
+                  <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                </span>
+              </li>
+              <li class="mdl-list__item mdl-list__item--three-line">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons  mdl-list__item-avatar">person</i>
+                  <span>Aaron Paul</span>
+                  <span data-content="demo" class="mdl-list__item-text-body">
+                    Aaron Paul played the role of Jesse in Breaking Bad. He also featured in
+                    the "Need For Speed" Movie.
+                  </span>
+                </span>
+                <span data-content="demo" class="mdl-list__item-secondary-content">
+                  <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                </span>
+              </li>
+              <li class="mdl-list__item mdl-list__item--three-line">
+                <span data-content="demo" class="mdl-list__item-primary-content">
+                  <i class="material-icons  mdl-list__item-avatar">person</i>
+                  <span>Bob Odenkirk</span>
+                  <span data-content="demo" class="mdl-list__item-text-body">
+                    Bob Odinkrik played the role of Saul in Breaking Bad. Due to www fondness for the
+                    character, Bob stars in his own show now, called "Better Call Saul".
+                  </span>
+                </span>
+                <span data-content="demo" class="mdl-list__item-secondary-content">
+                  <a data-content="demo" class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                </span>
+              </li>
+            </ul>
+
+
+            <h5 class="descriptor1">Tables</h5>
+
+            <table data-content="demo" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th data-content="demo" class="mdl-data-table__cell--non-numeric">Material</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-content="demo" class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                <td>25</td>
+                <td>$2.90</td>
+              </tr>
+              <tr>
+                <td data-content="demo" class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                <td>50</td>
+                <td>$1.25</td>
+              </tr>
+              <tr>
+                <td data-content="demo" class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                <td>10</td>
+                <td>$2.35</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h5 class="descriptor1">Text Fields</h5>
+
+          <!-- Floating Multiline Textfield -->
+          <form action="#">
+            <div data-content="demo" class="mdl-textfield mdl-js-textfield">
+              <textarea data-content="demo" class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+              <label data-content="demo" class="mdl-textfield__label" for="sample5">Text lines...</label>
+            </div>
+          </form>
+
+          <h5 class="descriptor1">Tool Tips</h5>   
+          <!-- Simple Tooltip -->
+          <div id="tt1" class="icon material-icons">add</div>
+          <div class="mdl-tooltip" data-mdl-for="tt1">
+          Follow
+          </div>
+          <!-- Large Tooltip -->
+          <div id="tt2"class="icon material-icons">print</div>
+          <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+          Print
+          </div>
+
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ulclass="mdl-mini-footer--link-list">
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+  <script>
+  $( document ).ready(function() {
+
+    CURRENT_FONTS = "Roboto v2.000";
+    NEW_FONTS = "Roboto v2.136";
+
+    // Change between current and new versions of Roboto
+    $('.current-fonts').on('click', function() {
+      $('#current-fonts').text(CURRENT_FONTS)
+      $('[data-content]').css('font-family', 'Roboto');
+      console.log(CURRENT_FONTS);
+    });
+    $('.new-fonts').on('click', function() {
+      $('#current-fonts').text(NEW_FONTS)
+      $('[data-content]').css('font-family', 'RobotoNew');
+      console.log(NEW_FONTS);
+    });
+
+  });
+  </script>
+</html>
