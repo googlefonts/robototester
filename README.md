@@ -6,3 +6,6 @@ https://robototester.appspot.com
 
 ## History
 2017/03/21: [Roboto 2.136](https://github.com/google/fonts/pull/710)
+
+## Todo:
+• Screenshots.py: Get before and after images via Browserstack's screenshot api. This is for paid plans only.
