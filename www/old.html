@@ -156,8 +156,6 @@
             <div id="current-fonts">
               Roboto v2.000
             </div>
-            <span class="new-fonts">new</span> | 
-            <span class="current-fonts">old</span>
           </div>
 
             <h5 class="descriptor1">About</h5>
@@ -493,24 +491,4 @@
       </main>
     </div>
   </body>
-  <script>
-  $( document ).ready(function() {
-
-    CURRENT_FONTS = "Roboto v2.000";
-    NEW_FONTS = "Roboto v2.136";
-
-    // Change between current and new versions of Roboto
-    $('.current-fonts').on('click', function() {
-      $('#current-fonts').text(CURRENT_FONTS)
-      $('[data-content]').css('font-family', 'Roboto');
-      console.log(CURRENT_FONTS);
-    });
-    $('.new-fonts').on('click', function() {
-      $('#current-fonts').text(NEW_FONTS)
-      $('[data-content]').css('font-family', 'RobotoNew');
-      console.log(NEW_FONTS);
-    });
-
-  });
-  </script>
 </html>
