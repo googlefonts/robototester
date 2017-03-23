@@ -3,6 +3,8 @@ Testing site for the Roboto webfonts using [Material Design Lite](https://getmdl
 
 https://robototester.appspot.com
 
+Tagged releases contain gifs with before and after previews. Gifs are generated with
+[![BrowserStack](https://www.browserstack.com/images/layout/browserstack-logo-600x315.png)](https://www.browserstack.com)
 
 ## History
 2017/03/21: [Roboto 2.136](https://github.com/google/fonts/pull/710)
