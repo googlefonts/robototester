@@ -105,7 +105,7 @@ def before_and_after_gifs(new_img_dir, old_img_dir):
 
 def main(auth):
     old_imgs_dir = 'screenshots_roboto_v2.000'
-    new_imgs_dir = 'screenshots_roboto_v2.136'
+    new_imgs_dir = 'screenshots_roboto_v2.137'
 
     print 'Getting old version samples'
     get_browserstack_imgs(auth, ROBOTO_OLD_SITE, old_imgs_dir)
