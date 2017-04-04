@@ -7,7 +7,5 @@ Tagged releases contain gifs with before and after previews. Gifs are generated 
 [![BrowserStack](https://www.browserstack.com/images/layout/browserstack-logo-600x315.png)](https://www.browserstack.com)
 
 ## History
+2017/04/04: [Roboto 2.137](https://github.com/google/fonts/pull/727)
 2017/03/21: [Roboto 2.136](https://github.com/google/fonts/pull/710)
-
-## Todo:
-• Screenshots.py: Get before and after images via Browserstack's screenshot api. This is for paid plans only.
